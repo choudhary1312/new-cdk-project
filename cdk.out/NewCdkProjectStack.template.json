@@ -3,7 +3,19 @@
     "MyBucketId0DF3D9D1": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
-        "BucketName": "vc-new-bucket-cdk-1"
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        },
+        "BucketName": "vc-new-bucket-cdk-1",
+        "VersioningConfiguration": {
+          "Status": "Enabled"
+        }
       },
       "UpdateReplacePolicy": "Retain",
       "DeletionPolicy": "Retain",

@@ -19,7 +19,9 @@ class NewCdkProjectStack(cdk.Stack):
         _s3.Bucket(
             self,
             "MyBucketId",
-            bucket_name="vc-new-bucket-cdk-1"
+            bucket_name="vc-new-bucket-cdk-1",
+            versioned=True,
+            encryption=_s3.BucketEncryption.S3_MANAGED
             
         )
             
